@@ -1,25 +1,13 @@
 // Code your solutions in this file
-let spy
-
-beforeEach(() => {
-  spy = sinon.spy(console, 'log')
-})
-
-afterEach(() => {
-  spy.restore()
-})
-
-const writeCards = (arr, surprise) => {
+function writeCards(names, event) {
   let messages = []
-  arr.forEach((user_name) => {
-    messages.unshift(
-      `Thank you, ${user_name}, for the wonderful ${surprise} gift!`
-    )
-  })
+  for (let i = 0; i < names.length; i++) {
+    messages.push(`Thank you, ${names[i]}, for the wonderful ${event} gift!`)
+  }
   return messages
 }
 
-const countDown = (number) => {
+function countDown(number) {
   while (number >= 0) {
     console.log(number)
     number--
